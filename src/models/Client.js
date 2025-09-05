@@ -5,6 +5,7 @@ const clientSchema = new mongoose.Schema({
     ownershipType: { type: String, required: true },
     address: String,
     phone: String,
-});
+}
+);
 
 module.exports = mongoose.model("Client", clientSchema);

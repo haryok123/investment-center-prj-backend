@@ -10,12 +10,12 @@ investmentRouter.post('/', (req, res) => {
 
 });
 
-investmentRouter.delete('/', (req, res) => {
-
+investmentRouter.patch('/:id', (req, res) => {
+    res.send('clientRouter.patch works');
 });
 
 investmentRouter.delete('/:id', (req, res) => {
-
+    res.send('clientRouter.get works');
 });
 
 module.exports = investmentRouter;

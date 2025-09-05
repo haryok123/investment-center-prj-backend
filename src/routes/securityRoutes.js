@@ -10,12 +10,12 @@ securityRouter.post('/', (req, res) => {
 
 });
 
-securityRouter.delete('/', (req, res) => {
-
+securityRouter.patch('/:id', (req, res) => {
+    res.send('clientRouter.patch works');
 });
 
 securityRouter.delete('/:id', (req, res) => {
-
+    res.send('clientRouter.get works');
 });
 
 module.exports = securityRouter;

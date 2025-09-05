@@ -10,12 +10,12 @@ depositRouter.post('/', (req, res) => {
 
 });
 
-depositRouter.delete('/', (req, res) => {
-
+depositRouter.patch('/:id', (req, res) => {
+    res.send('clientRouter.patch works');
 });
 
 depositRouter.delete('/:id', (req, res) => {
-
+    res.send('clientRouter.get works');
 });
 
 module.exports = depositRouter;

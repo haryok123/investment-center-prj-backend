@@ -11,10 +11,10 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use('clients', clientRouter);
-app.use('securities', securityRouter);
-app.use('investments', investmentRouter);
-app.use('deposits', depositRouter);
+app.use('/clients', clientRouter);
+app.use('/securities', securityRouter);
+app.use('/investments', investmentRouter);
+app.use('/deposits', depositRouter);
 
 connectDB();
 

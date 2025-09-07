@@ -2,16 +2,11 @@ const mongoose = require("mongoose");
 
 const securitySchema = new mongoose.Schema({
     code: { type: String, required: true, unique: true },
-    minAmount: Number,
+    type: { type: String, required: true },
+    minTransactionAmount: { type: Number, required: true },
     rating: String,
-    profitability: Number,
-    info: String,
-    quotesHistory: [
-        {
-            date: { type: Date, default: Date.now },
-            price: Number,
-        },
-    ],
+    lastYearReturn: Number,
+    additionalInfo: String,
 });
 
 module.exports = mongoose.model("Security", securitySchema);

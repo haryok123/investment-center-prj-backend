@@ -11,11 +11,11 @@ depositRouter.post('/', (req, res) => {
 });
 
 depositRouter.patch('/:id', (req, res) => {
-    res.send('clientRouter.patch works');
+    res.send('depositRouter.patch works');
 });
 
 depositRouter.delete('/:id', (req, res) => {
-    res.send('clientRouter.get works');
+    res.send('depositRouter.get works');
 });
 
 module.exports = depositRouter;

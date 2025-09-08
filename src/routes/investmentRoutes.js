@@ -1,21 +1,10 @@
 const express = require('express');
+const investmentController = require('../controllers/investmentController');
 
 const investmentRouter = express.Router();
 
-investmentRouter.get('/', (req, res) => {
+investmentRouter.get('/', investmentController.getInvestments);
 
-});
-
-investmentRouter.post('/', (req, res) => {
-
-});
-
-investmentRouter.patch('/:id', (req, res) => {
-    res.send('clientRouter.patch works');
-});
-
-investmentRouter.delete('/:id', (req, res) => {
-    res.send('clientRouter.get works');
-});
+investmentRouter.post('/', investmentController.createInvestment);
 
 module.exports = investmentRouter;

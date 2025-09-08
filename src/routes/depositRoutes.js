@@ -1,21 +1,11 @@
 const express = require('express');
+const  depositController = require('../controllers/depositController');
 
 const depositRouter = express.Router();
 
-depositRouter.get('/', (req, res) => {
+depositRouter.get('/', depositController.getDeposits);
 
-});
+depositRouter.post('/', depositController.createDeposit);
 
-depositRouter.post('/', (req, res) => {
-
-});
-
-depositRouter.patch('/:id', (req, res) => {
-    res.send('depositRouter.patch works');
-});
-
-depositRouter.delete('/:id', (req, res) => {
-    res.send('depositRouter.get works');
-});
 
 module.exports = depositRouter;

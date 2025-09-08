@@ -1,6 +1,6 @@
 const Client = require('../models/Client');
 
-const getClients = async (req, res) => async (req, res) => {
+const getClients = async (req, res) => {
     try {
         const clients = await Client.find();
         res.json(clients);
@@ -18,6 +18,7 @@ const createClient = async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 };
+
 const getClientById = async (req, res) => {
     try {
         const client = await Client.findById(req.params.id);
@@ -27,15 +28,23 @@ const getClientById = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
+
 const updateClient = async (req, res) => {
     try {
-        const updatedClient = await Client.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (!updatedClient) return res.status(404).json({ message: "Client not found" });
-        res.json(updatedClient);
+        const client = await Client.findOneAndUpdate(
+            { clientId: req.params.id },
+            req.body,
+            { new: true}
+        );
+        if (!client) {
+            return res.status(404).json({ message: "Client not found" });
+        }
+        res.json(client);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
 };
+
 const deleteClient = async (req, res) => {
     try {
         const deletedClient = await Client.findByIdAndDelete(req.params.id);

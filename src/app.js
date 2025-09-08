@@ -5,6 +5,8 @@ const clientRouter = require('./routes/clientRoutes');
 const securityRouter = require('./routes/securityRoutes');
 const investmentRouter = require('./routes/investmentRoutes');
 const depositRouter = require('./routes/depositRoutes');
+const analyticRouter = require('./routes/analyticRoutes');
+const quotationRouter = require('./routes/quotationRoutes');
 
 require('dotenv').config();
 
@@ -17,6 +19,8 @@ app.use('/clients', clientRouter);
 app.use('/securities', securityRouter);
 app.use('/investments', investmentRouter);
 app.use('/deposits', depositRouter);
+app.use('/analytics', analyticRouter);
+app.use('/quotation', quotationRouter);
 
 connectDB();
 

@@ -1,21 +1,17 @@
 const express = require('express');
+const securityController = require('../controllers/securityController');
 
 const securityRouter = express.Router();
 
-securityRouter.get('/', (req, res) => {
 
-});
+securityRouter.get('/',  securityController.getSecurities);
 
-securityRouter.post('/', (req, res) => {
+securityRouter.post('/', securityController.createSecurity);
 
-});
+securityRouter.get('/:id', securityController.getSecurityByCode);
 
-securityRouter.patch('/:id', (req, res) => {
-    res.send('clientRouter.patch works');
-});
+securityRouter.put('/:id', securityController.updateSecurity);
 
-securityRouter.delete('/:id', (req, res) => {
-    res.send('clientRouter.get works');
-});
+securityRouter.delete('/:id', securityController.deleteSecurity);
 
 module.exports = securityRouter;
